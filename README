@@ -1,0 +1,74 @@
+Title: SASS (SCSS) Suckerfish Dropdown Mixin
+
+Author: Adam Savitzky
+Email: asavitzky@forio.com
+
+SCSS port of CSS at http://htmldog.com/articles/suckerfish/dropdowns/ 
+Built with compass http://www.compass-style.org 
+Generates the styles for suckerfish dropdowns 
+
+Pass in the parameters $topLevelWidth and $lowerLevelWidth. The former controls the width of the first level,
+i.e. the visible level. The lower level is the width of the sub-levels, which get exposed on hover.
+
+Call this mixin with @import suckerfish(topLevelWidth, lowerLevelWidth), then style it as needed.
+
+If you need more levels, then you will need to customize it.
+
+To override any of these styles, place your code after the @import directive.
+
+For IE 6 compatibility, you must add javascript that attaches .sfhover class to mouseover. A sample function is included as sfhover.js.
+
+This will handle up to three levels of dropdowns.
+
+Be sure to minify before deploying to production.
+
+------------------------------------------------ 
+
+How to install (It's EZ):
+1) You must have SCSS and Compass Installed
+   $ sudo gem install scss && gem compass
+2) Create a new project:
+   $ compass create helloworld
+   OR, initialize an existing project:
+   $ cd helloworld
+   $ compass install
+3) Add _suckerfish.scss to the partials directory
+4) In screen.css (or any stylesheet you want to use), add a reference to the mixin:
+   @import "partials/suckerfish";
+5) I like to declare the width for the navigation items as variables at the top of screen.scss, but you don't have to:
+   $topLevelWidth: 10em; // Make these w/e you want
+   $lowerLevelWidth: 10em;
+6) Add your styles to the container of your navigation, using the @include directive:
+   #navigation {
+       /* #navigation should be a div to hold your menu, not the ul itself */
+       @include suckerfish($topLevelWidth, $lowerLevelWidth);
+   }
+7) Save your scss and compile your project:
+   compass compile /path/to/project/
+   or see the compass docs to learn how to compile automatically on save
+8) Add the javascript function from sfhover.js to your page (If you give a shit enough to support IE6), or write your own function. Basically, this bad boy adds the sfhover class to the items when you hover over, and removes it when you hover out, since IE6 does not support li:hover.
+9) Add a semantic unordered list to your markup to finish 'er off. E.g.:
+<ul id="nav">
+	<li><a href="#">Percoidei</a>
+		<ul>
+			<li><a href="#">Remoras</a></li>
+			<li><a href="#">Tilefishes</a></li>
+			<li><a href="#">Bluefishes</a></li>
+			<li><a href="#">Tigerfishes</a></li>
+		</ul>
+	</li>
+
+	<li><a href="#">Anabantoidei</a>
+		<ul>
+			<li><a href="#">Climbing perches</a></li>
+			<li><a href="#">Labyrinthfishes</a></li>
+			<li><a href="#">Kissing gouramis</a></li>
+			<li><a href="#">Pike-heads</a></li>
+			<li><a href="#">Giant gouramis</a></li>
+		</ul>
+	</li>
+
+	<!-- etc. -->
+
+</ul>
+8) Whoop, there it is! 

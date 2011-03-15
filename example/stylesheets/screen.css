@@ -1,0 +1,124 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+/* line 14, ../../../../../../usr/local/lib/ruby/gems/1.9.1/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  font-family: inherit;
+  vertical-align: baseline;
+}
+
+/* line 17, ../../../../../../usr/local/lib/ruby/gems/1.9.1/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+body {
+  line-height: 1;
+  color: black;
+  background: white;
+}
+
+/* line 19, ../../../../../../usr/local/lib/ruby/gems/1.9.1/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 21, ../../../../../../usr/local/lib/ruby/gems/1.9.1/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+  vertical-align: middle;
+}
+
+/* line 23, ../../../../../../usr/local/lib/ruby/gems/1.9.1/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 25, ../../../../../../usr/local/lib/ruby/gems/1.9.1/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: "" "";
+}
+/* line 96, ../../../../../../usr/local/lib/ruby/gems/1.9.1/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+}
+
+/* line 27, ../../../../../../usr/local/lib/ruby/gems/1.9.1/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* SCSS port of CSS at http://htmldog.com/articles/suckerfish/dropdowns/ */
+/* Built with compass http://www.compass-style.org */
+/* Generates the styles for suckerfish dropdowns */
+/* 
+   Pass in the parameters $topLevelWidth and $lowerLevelWidth. The former controls the width of the first level,
+   i.e. the visible level. The lower level is the width of the sub-levels, which get exposed on hover.
+
+   Call this mixin with @import suckerfish(topLevelWidth, lowerLevelWidth), then style it as needed.
+
+   To override any of these styles, place your code after the @import directive.
+
+   For IE 6 compatibility, you must add javascript that attaches .sfhover class to mouseover.
+
+   This will handle up to three levels of dropdowns.
+
+   Be sure to minify before deploying to production.
+*/
+/* line 11, ../src/screen.scss */
+#navigation {
+  /* #navigation should be a div to hold your menu, not the ul itself */
+}
+/* line 21, ../src/partials/_suckerfish.scss */
+#navigation ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  line-height: 1;
+}
+/* line 27, ../src/partials/_suckerfish.scss */
+#navigation a {
+  display: block;
+  width: 10em;
+}
+/* line 31, ../src/partials/_suckerfish.scss */
+#navigation li {
+  float: left;
+  width: 10em;
+}
+/* line 35, ../src/partials/_suckerfish.scss */
+#navigation li:hover ul, #navigation li.sfhover ul {
+  left: auto;
+}
+/* line 37, ../src/partials/_suckerfish.scss */
+#navigation li:hover ul ul, #navigation li.sfhover ul ul {
+  left: -999em;
+}
+/* line 43, ../src/partials/_suckerfish.scss */
+#navigation li li:hover ul, #navigation li li.sfhover ul {
+  left: auto;
+}
+/* line 47, ../src/partials/_suckerfish.scss */
+#navigation li ul {
+  position: absolute;
+  width: 10em;
+  left: -999em;
+}
+/* line 51, ../src/partials/_suckerfish.scss */
+#navigation li ul ul {
+  margin: -1em 0 0 10em;
+}

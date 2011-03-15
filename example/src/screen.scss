@@ -1,0 +1,14 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+$topLevelWidth: 10em; // Make these w/e you want
+$lowerLevelWidth: 10em;
+
+@import "compass/reset";
+@import "partials/suckerfish";
+
+#navigation {
+       /* #navigation should be a div to hold your menu, not the ul itself */
+       @include suckerfish($topLevelWidth, $lowerLevelWidth);
+}
